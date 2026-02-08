@@ -663,23 +663,25 @@ footer {
         /* Reduce blur radius further */
     }
 
-    /* 2. Speed up entrance animations */
+    /* 2. KILL animations (Instant Load) */
     .fade-in,
     .fade-in-delay,
-    .fade-in-delay-2 {
-        animation-delay: 0s !important;
-        /* Make everything appear instantly */
-        animation-duration: 0.5s !important;
-        /* Faster fade */
+    .fade-in-delay-2,
+    .post-card,
+    .view-section {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
-    /* 3. Reduce Glassmorphism cost */
+    /* 3. Minimal Glassmorphism (Save GPU) */
     .navbar,
     .content-section.bio-box,
     .post-card,
-    .modal {
-        backdrop-filter: blur(8px);
-        /* Lower blur for better FPS */
-        -webkit-backdrop-filter: blur(8px);
+    .modal-content {
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        background: rgba(26, 36, 26, 0.9);
+        /* More opaque to compensate for less blur */
     }
 }
