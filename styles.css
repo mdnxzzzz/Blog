@@ -651,4 +651,35 @@ footer {
     #modal-title {
         font-size: 1.8rem;
     }
+
+    /* === MOBILE PERFORMANCE OPTIMIZATIONS === */
+
+    /* 1. Disable heavy background animations */
+    .background-overlay::before,
+    .background-overlay::after {
+        animation: none;
+        /* Stop floating animation to save battery/GPU */
+        filter: blur(60px);
+        /* Reduce blur radius further */
+    }
+
+    /* 2. Speed up entrance animations */
+    .fade-in,
+    .fade-in-delay,
+    .fade-in-delay-2 {
+        animation-delay: 0s !important;
+        /* Make everything appear instantly */
+        animation-duration: 0.5s !important;
+        /* Faster fade */
+    }
+
+    /* 3. Reduce Glassmorphism cost */
+    .navbar,
+    .content-section.bio-box,
+    .post-card,
+    .modal {
+        backdrop-filter: blur(8px);
+        /* Lower blur for better FPS */
+        -webkit-backdrop-filter: blur(8px);
+    }
 }
