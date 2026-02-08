@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medina | ES/EN Dev</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Medina's Blog</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link" id="nav-posts">Home</a> <!-- Posts are Home -->
+            <a href="#" class="nav-link" id="nav-about">About Me</a>
+            <button id="theme-toggle" class="nav-icon theme-btn" aria-label="Toggle Theme"><i
+                    class="fa-solid fa-sun"></i></button>
+        </div>
+    </nav>
+
+    <div class="background-overlay"></div>
+
+    <main class="container">
+
+        <!-- STATIC HEADER: Profile Section -->
+        <section class="profile-card fade-in" id="profile">
+            <div class="image-container">
+                <img src="profile.jpg" alt="Medina" class="profile-pic" id="profile-pic">
+            </div>
+
+            <div class="profile-info">
+                <h1 class="name">Medina</h1>
+                <h2 class="role">ES/EN Dev <span class="divider">|</span> Linux & Android</h2>
+
+                <p class="bio">
+                    "I like help people."
+                </p>
+
+                <div class="tech-stack">
+                    <span class="badg"><i class="fa-brands fa-linux"></i> Linux</span>
+                    <span class="badg"><i class="fa-brands fa-android"></i> Android</span>
+                    <span class="badg"><i class="fa-solid fa-code"></i> Dev</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- DYNAMIC CONTENT AREA -->
+
+        <!-- VIEW 1: ABOUT ME (Who I Am + Socials) -->
+        <div id="about-view" class="view-section hidden">
+            <!-- Who I Am Section -->
+            <section class="content-section bio-box fade-in-delay-2" id="who-i-am">
+                <h2 class="section-title">Who I Am</h2>
+                <div class="content-text">
+                    <p>
+                        I am a developer from Spain with a lifelong passion for technology. My journey began
+                        experimenting
+                        with
+                        game mods like HappyMod, but my true path started when I discovered the tech communities on
+                        Telegram
+                        in
+                        2021. Since then, I've dedicated myself to continuous learning.
+                    </p>
+                    <p>
+                        Currently, I develop for Android (maintaining two specific models) and Linux environments. I
+                        also
+                        provide private consultancy services and am actively expanding my skills in Ethical Hacking.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Social Media Section -->
+            <section class="social-wrapper fade-in-delay-2">
+                <div class="social-header">---- Social Media ----</div>
+                <div class="social-row">
+                    <a href="https://github.com/mdnxzzzz" target="_blank" class="social-item" aria-label="GitHub"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://t.me/mdnxzzzz" target="_blank" class="social-item" aria-label="Telegram"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+
+                    <a href="https://t.me/mdnxzzzzz" target="_blank" class="social-item" aria-label="Telegram Channel"
+                        rel="noopener noreferrer">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- VIEW 2: HOME (POSTS) -->
+        <div id="home-view" class="view-section">
+            <h1 class="page-title">Posts</h1>
+            <div id="posts-container" class="posts-wrapper">
+                <!-- Posts will be injected here by JS -->
+            </div>
+
+            <div class="view-more-container">
+                <button id="view-more-btn" class="view-more-btn">
+                    ... more
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; <span id="year"></span> Medina. Built with nature in mind.</p>
+        </footer>
+    </main>
+
+    <!-- Post Detail Modal -->
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <span id="modal-badge" class="badg">Category</span>
+                <span id="modal-date" class="post-date">Date</span>
+            </div>
+            <h2 id="modal-title">Post Title</h2>
+            <div id="modal-body" class="content-text">
+                <!-- Long text goes here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
